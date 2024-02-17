@@ -1,0 +1,152 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.background-container {
+  position: relative;
+}
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.video-container {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-container video {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.login-box {
+  width: 300px;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  text-align: center;
+  position: relative;
+  overflow-y: auto;
+}
+
+.login-box.signup {
+  max-height: 500px;
+}
+
+.shake {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  padding: 0px;
+  margin: 0px;
+  margin-left: 5px;
+  text-align: left;
+}
+
+.input-field {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px 20px;
+  background-color: #a379c9;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #adb9e3;
+}
+
+.bn13 {
+  width: 100%;
+  border-radius: 7px;
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #a379c9;
+  color: white;
+  text-align: center;
+  transition: all 0.2s;
+  animation: bn13bouncy 5s infinite linear;
+  position: relative;
+}
+
+.bn13:hover {
+  background-color: #adb9e3;
+}
+
+@keyframes bn13bouncy {
+  0% {
+    top: 0em;
+  }
+  40% {
+    top: 0em;
+  }
+  43% {
+    top: -0.5em;
+  }
+  46% {
+    top: 0em;
+  }
+  48% {
+    top: -0.2em;
+  }
+  50% {
+    top: 0em;
+  }
+  100% {
+    top: 0em;
+  }
+}
+
+.display-linebreak {
+  white-space: pre-line;
+  position: relative;
+}
