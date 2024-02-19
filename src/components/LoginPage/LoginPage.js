@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./LoginPage.css";
 import axios from "axios";
 import PasswordChecklist from "react-password-checklist";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordVisible, setPasswordVisible] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
   const [showLogin, setShowLogin] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
@@ -164,12 +166,23 @@ const LoginPage = () => {
                 />
                 <br />
                 <input
-                  type="password"
+                  type={passwordVisible ? "text" : "password"}
                   placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="input-field"
                 />
+                <span
+                  className="password-toggle"
+                  onClick={() => setPasswordVisible(!passwordVisible)}
+                >
+                  {passwordVisible ? (
+                    <AiOutlineEye />
+                  ) : (
+                    <AiOutlineEyeInvisible />
+                  )}
+                </span>
+
                 <br />
                 <br />
                 <button onClick={handleLogin} className="login-button">
@@ -274,19 +287,29 @@ const LoginPage = () => {
                 )}
                 <br />
                 <input
-                  type="text"
+                  type={passwordVisible ? "text" : "password"}
                   placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="input-field"
                 />
                 <input
-                  type="text"
+                  type={passwordVisible ? "text" : "password"}
                   placeholder="Repeat password"
                   value={passwordAgain}
                   onChange={(e) => setPasswordAgain(e.target.value)}
                   className="input-field"
                 />
+                <span
+                  className="password-toggle"
+                  onClick={() => setPasswordVisible(!passwordVisible)}
+                >
+                  {passwordVisible ? (
+                    <AiOutlineEye />
+                  ) : (
+                    <AiOutlineEyeInvisible />
+                  )}
+                </span>
                 <PasswordChecklist
                   rules={[
                     "minLength",
