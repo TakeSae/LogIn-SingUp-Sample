@@ -20,7 +20,6 @@ const LoginPage = () => {
   const [passwordAgain, setPasswordAgain] = useState("");
 
   const isEmailValid = (email) => {
-    // Regular expression for email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
@@ -93,8 +92,6 @@ const LoginPage = () => {
         return;
       }
 
-      // implement actual login logic here
-      // always true since it is a demo
       setLoggedIn(true);
     } else {
       setErrorMessage("All fields must be filled up");
@@ -133,12 +130,12 @@ const LoginPage = () => {
 
   const handleSignUpClick = () => {
     setShowLogin(false);
-    setErrorMessage(""); // Clear error message
+    setErrorMessage("");
   };
 
   const handleBackToLoginClick = () => {
     setShowLogin(true);
-    setErrorMessage(""); // Clear error message
+    setErrorMessage("");
   };
 
   return (
@@ -182,7 +179,6 @@ const LoginPage = () => {
                     <AiOutlineEyeInvisible />
                   )}
                 </span>
-
                 <br />
                 <br />
                 <button onClick={handleLogin} className="login-button">
