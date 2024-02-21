@@ -252,6 +252,11 @@ const LoginPage = () => {
                   onBlur={handleCEPBlur}
                   onChange={(e) => setCEP(e.target.value)}
                   className="input-field"
+                  onKeyPress={(event) => {
+                    if (!/[0-9]/.test(event.key)) {
+                      event.preventDefault();
+                    }
+                  }}
                 />
                 {cepValid && (
                   <>
@@ -282,6 +287,11 @@ const LoginPage = () => {
                       value={houseNumber}
                       onChange={(e) => setHouseNumber(e.target.value)}
                       className="input-field"
+                      onKeyPress={(event) => {
+                        if (!/[0-9]/.test(event.key)) {
+                          event.preventDefault();
+                        }
+                      }}
                     />
                   </>
                 )}
